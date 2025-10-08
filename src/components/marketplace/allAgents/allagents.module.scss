@@ -1,0 +1,59 @@
+.allCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2rem 0;
+
+    & > img {
+      width: 100%;
+      aspect-ratio: 1/1.1;
+      border-radius: 12px;
+    }
+
+    & > .title {
+      font-size: 2rem;
+      font-weight: 550;
+      margin-top: 1.5rem;
+    }
+
+    & > .desc {
+      font-size: 1.05rem;
+      line-height: 1.6;
+
+      & > :nth-child(2) {
+        margin-top: 1rem;
+      }
+    }
+
+    & > .startBtn {
+      padding: 0.7rem 1.5rem;
+      background: var(--main-color);
+      color: white;
+      border-radius: 35px;
+      cursor: pointer;
+      font-weight: 500;
+      width: max-content;
+      margin-top: auto;
+
+      &:hover {
+        background: var(--light-green-color);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .allCards {
+    padding: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0rem;
+  }
+}

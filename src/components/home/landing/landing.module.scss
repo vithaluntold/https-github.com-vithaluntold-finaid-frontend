@@ -1,0 +1,170 @@
+.landing {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 7rem;
+
+  & > .mainText {
+    font-size: 3.5rem;
+    font-weight: 550;
+    text-align: center;
+  }
+
+  & > .desc {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  & > .hireBtn {
+    background: var(--light-green-color);
+    border-radius: 6px;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    width: max-content;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+
+    &:hover {
+      color: white;
+      background: var(--main-color);
+    }
+  }
+
+  & > .mobileContainer {
+    border: 6px solid var(--main-color);
+    // padding: 5rem;
+    aspect-ratio: 1/1.8;
+    border-radius: 26px;
+    position: relative;
+    margin-top: 2rem;
+
+    & > img {
+      width: 100%;
+      object-fit: contain;
+      border-radius: 20px 20px 0 0;
+    }
+
+    & > .detailsContainer {
+      position: absolute;
+      height: 55%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 20px;
+      background: white;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      & > .name {
+        font-size: 2rem;
+        font-weight: 550;
+        margin-bottom: 0.5rem;
+      }
+
+      & > .details {
+        display: flex;
+        gap: 1rem;
+        font-weight: 600;
+
+        & > :nth-child(1) {
+          width: 100px;
+        }
+      }
+
+      & > :nth-child(2) {
+        font-size: 1.05rem;
+      }
+      & > :nth-child(3) {
+        font-size: 0.95rem;
+      }
+      & > :nth-child(4) {
+        font-size: 0.9rem;
+      }
+      & > :nth-child(5) {
+        font-size: 0.85rem;
+      }
+      & > :nth-child(6) {
+        font-size: 0.75rem;
+      }
+
+      & > .getStartedBtn {
+        padding: 0.6rem 1.5rem;
+        border: 1px solid var(--main-color);
+        cursor: pointer;
+        border-radius: 35px;
+        width: max-content;
+        margin-top: 0.6rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+
+        &:hover {
+          color: white;
+          background: var(--main-color);
+        }
+      }
+    }
+
+    & > .hireCard {
+      background: var(--green-color);
+      padding: 0.7rem 2rem;
+      border-radius: 35px;
+      position: absolute;
+      left: -9rem;
+      top: 25%;
+      font-weight: 500;
+      animation: moveUpAndDown 2s alternate infinite;
+    }
+
+    & > .starCard {
+      background: var(--violet-color);
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: -3rem;
+      bottom: 25%;
+      font-weight: 500;
+      animation: moveUpAndDown 2s alternate infinite;
+
+      & > img {
+        height: 3rem;
+        object-fit: contain;
+      }
+    }
+
+    @keyframes moveUpAndDown {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(3rem);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .landing {
+    padding: 4rem 10px;
+    padding-top: 7rem;
+
+    & > .mobileContainer {
+      & > .hireCard {
+        left: -2rem;
+        top: -2.5rem;
+      }
+
+      & > .starCard {
+        right: -1.5rem;
+        bottom: 15%;
+      }
+    }
+  }
+}

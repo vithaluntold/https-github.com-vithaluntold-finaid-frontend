@@ -1,0 +1,17 @@
+.execution {
+  & > .allComponents {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    & > .comingSoon {
+      height: calc(100vh - 5rem);
+      margin-top: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      font-family: 600;
+      color: var(--light-green-color);
+    }
+  }
+}

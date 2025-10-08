@@ -1,0 +1,78 @@
+:root {
+  --main-color: #000000;
+  --blue-color: #3d9be9;
+  --green-color: #e7fbbc;
+  --orange-color: #fa854f;
+  --violet-color: #bfc6f4;
+  --font-color: #000000;
+  --light-green-color: #44e2c2;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--font-color);
+  font-family: sora, sora, sans-serif;
+  width: 100vw;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px; /* Set the width of the table's scrollbar */
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 7px;
+}
+
+.carousel-item-padding-40-px {
+  padding: 0 20px; /* This adds 20px space between each slide */
+}
+
+.slider-wrapper {
+  overflow: visible; /* This ensures the next/previous slides are partially visible */
+}
+
+.activePagination {
+  background: var(--light-green-color);
+}
+
+textarea {
+  &::placeholder {
+    font-family: sora, sora, sans-serif;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 86%;
+  }
+}

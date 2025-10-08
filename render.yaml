@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: finaid-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "build"
+    envVars:
+      - key: REACT_APP_API_URL
+        value: "https://finaid-backend-api.onrender.com"

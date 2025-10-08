@@ -1,0 +1,88 @@
+.footer {
+  background: var(--main-color);
+  padding-top: 5rem;
+
+  & > .footerContainer {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    margin: auto;
+    color: white;
+
+    & > .content {
+      display: flex;
+      gap: 3rem;
+      justify-content: space-between;
+
+      & > .logo {
+        font-family: sora, sora, sans-serif;
+        font-weight: 500;
+        font-size: 2.25rem;
+        text-decoration: none;
+        text-align: center;
+        letter-spacing: 0.3em;
+        line-height: normal;
+        color: white;
+      }
+
+      & > .detailsContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        width: 100%;
+
+        & > div {
+          & > .title {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: var(--light-green-color);
+          }
+
+          & > .allDetails {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            & > div {
+              cursor: pointer;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & > .copyRights {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .footer {
+    padding: 5rem 10px 0 10px;
+
+    & > .footerContainer {
+      & > .content {
+        flex-direction: column;
+
+        & > .logo {
+          text-align: left;
+        }
+
+        & > .detailsContainer {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

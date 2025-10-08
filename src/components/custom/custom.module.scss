@@ -1,0 +1,175 @@
+.eachCustomDropdown {
+  position: relative;
+  min-width: 200px;
+  height: 3.2rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all linear 0.3s;
+
+  & > .title {
+    font-size: 0.9rem;
+    margin-bottom: 7px;
+  }
+
+  & > .inputContainer {
+    padding: 1rem 1.5rem;
+    // border-radius: 35px;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    font-size: 0.8rem;
+    background: white;
+    width: 100%;
+    position: absolute;
+    top: 0rem;
+    z-index: 2;
+    max-height: 400px;
+    overflow-y: scroll;
+    transition: all ease-in 0.2s;
+
+    & > span {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > :nth-child(1) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &:focus {
+      outline: var(--main-color);
+      background: white;
+      border: 1.5px solid var(--main-color);
+    }
+
+    & > ul {
+      list-style: none;
+      cursor: pointer;
+      margin: 0;
+      margin-top: 1rem;
+      position: relative;
+      height: 150px;
+      overflow-y: scroll;
+
+      & > li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0rem;
+
+        & > img {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+        }
+      }
+
+      & > li:has(input) {
+        padding: 0;
+
+        & > input {
+          height: 100%;
+          width: 100%;
+          border: none;
+          outline: none;
+          padding: 0.75rem 0rem;
+          color: var(--font-color);
+          background: transparent;
+          transition: all ease-in 0.2s;
+
+          :focus {
+            border: 2px solid var(--main-color);
+          }
+        }
+      }
+
+      &::-webkit-scrollbar {
+        display: block;
+        width: 7px; /* Set the width of the table's scrollbar */
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(
+          --font-color
+        ); /* Set the color of the scrollbar thumb */
+        border-radius: 5px; /* Set the border-radius of the thumb */
+        height: 20px;
+        transition: all linear 0.3s;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: var(
+          --main-color
+        ); /* Set the color when the scrollbar thumb is hovered */
+      }
+    }
+
+    // ::-webkit-scrollbar {
+    //   width: 0.5em; /* Adjust the width as needed */
+    //   background-color: transparent; /* Adjust the background color as needed */
+    //   display: none;
+    // }
+
+    // ::-webkit-scrollbar-thumb {
+    //   background-color: transparent; /* Adjust the thumb color as needed */
+    //   display: none;
+    // }
+  }
+
+  & > .asteriskIcon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 10px;
+  }
+
+  .associatesEachHr {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: unset;
+
+    & > img {
+      border-radius: 50%;
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+
+    & > :nth-child(2) {
+      display: grid;
+      // gap: 2px;
+
+      & > :nth-child(1) {
+        font-size: 1rem;
+        font-weight: 520;
+      }
+
+      & > :nth-child(2) {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  & > .allItems {
+    margin-top: 3.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    & > div {
+      font-size: 0.8rem;
+      padding: 0.6rem 0.5rem;
+      border: 0.5px solid #e5e5e5;
+      border-radius: 6px;
+    }
+  }
+}

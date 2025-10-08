@@ -1,0 +1,88 @@
+.feedback {
+  background: var(--light-green-color);
+  padding: 5rem;
+
+  & > .carousalContainer {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    margin: auto;
+    height: 100%;
+  }
+}
+
+.eachFeedback {
+  width: 100%;
+  border-radius: 26px;
+  background: white;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: calc(100% - 6rem);
+  margin: 3rem 0;
+
+  & > .title {
+    font-size: 3rem;
+    text-align: center;
+    max-width: 65%;
+  }
+
+  & > .person {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  & > .card {
+    background: var(--orange-color);
+    padding: 0.7rem 2rem;
+    border-radius: 35px;
+    position: absolute;
+    left: 6rem;
+    top: -1rem;
+    font-weight: 500;
+    rotate: -6deg;
+    z-index: 5;
+    animation: moveUpAndDown 2s alternate infinite;
+  }
+
+  @keyframes moveUpAndDown {
+    from {
+      top: -1.5rem;
+    }
+    to {
+      top: 0rem;
+    }
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .feedback {
+    padding: 5rem 10px;
+  }
+
+  .eachFeedback {
+    padding: 2rem 0.5rem;
+
+    & > .card {
+      top: -4rem;
+      rotate: unset;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    @keyframes moveUpAndDown {
+      from {
+        top: -2.5rem;
+      }
+      to {
+        top: -2rem;
+      }
+    }
+  }
+}

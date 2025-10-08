@@ -1,0 +1,162 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 2.5rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: white;
+
+  & > :nth-child(2) {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+
+    & > .typedLogo {
+      font-family: sora, sora, sans-serif;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 0.3em;
+      line-height: normal;
+    }
+  }
+
+  & > .btnsContainer {
+    gap: 1.5rem;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: white;
+      //   font-weight: 500;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      transition: all linear 0.2s;
+
+      &:hover {
+        scale: 0.97;
+      }
+    }
+
+    & > .manifestBtn {
+      background: var(--light-green-color);
+      color: var(--font-color);
+    }
+
+    & > .loginBtn {
+      background: var(--main-color);
+    }
+
+    & > .signUpBtn {
+      background: var(--light-green-color);
+    }
+    & > .signInBtn {
+      background: var(--main-color);
+    }
+  }
+
+  & > :nth-child(1),
+  :nth-child(3) {
+    width: 220px;
+    display: flex;
+    align-items: center;
+
+    & > .mainLogo {
+      height: 2.5rem;
+    }
+  }
+
+  & > .linksMobile {
+    display: none;
+    width: 3.5rem;
+    height: 3.5rem;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    position: relative;
+    background: rgba(242, 242, 242, 0.0509803922);
+    backdrop-filter: blur(15px);
+
+    & > div {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      & > svg {
+        color: var(--main-font-color);
+        font-size: 1.5rem;
+        transition: all linear 0.3s;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    & > .linksDropdown {
+      position: absolute;
+      top: 5rem;
+      right: 10px;
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+      background: rgb(71, 71, 71);
+      backdrop-filter: blur(15px);
+      border-radius: 14px;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 3;
+      transition: all linear 0.3s;
+      overflow: hidden;
+      display: flex;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: white;
+        //   font-weight: 500;
+        padding: 0.7rem 2rem;
+        border-radius: 6px;
+      }
+
+      & > .manifestBtn {
+        background: var(--light-green-color);
+      }
+
+      & > .loginBtn {
+        background: var(--main-color);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .navbar {
+    padding: 1.2rem 10px;
+
+    & > :nth-child(2) {
+      display: none;
+    }
+
+    & > .btnsContainer {
+      display: none;
+    }
+
+    & > .linksMobile {
+      display: flex;
+    }
+  }
+}
