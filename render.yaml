@@ -1,9 +1,48 @@
 services:
+  # Frontend Static Site
   - type: web
     name: finaid-frontend
     env: static
+    region: oregon
     buildCommand: "npm install && npm run build"
     staticPublishPath: "build"
+    
+    # Build Environment Variables
     envVars:
+      # Backend API URL (points to your backend service)
       - key: REACT_APP_API_URL
         value: "https://finaid-backend-api.onrender.com"
+      
+      # Direct API Keys (Optional - only if using Execute/ClaudeExecute components)
+      # Leave these empty if only using ExecutionBackend components
+      - key: REACT_APP_OPENAI_API_KEY
+        sync: false  # Set in Render dashboard if needed
+      - key: REACT_APP_ANTHROPIC_API_KEY
+        sync: false  # Set in Render dashboard if needed
+      
+      # Build optimization
+      - key: NODE_ENV
+        value: "production"
+      - key: GENERATE_SOURCEMAP
+        value: "false"
+    
+    # Headers for security and performance
+    headers:
+      - path: "/*"
+        name: "X-Frame-Options"
+        value: "DENY"
+      - path: "/*"
+        name: "X-Content-Type-Options"
+        value: "nosniff"
+      - path: "/*"
+        name: "Referrer-Policy"
+        value: "origin-when-cross-origin"
+      - path: "/static/*"
+        name: "Cache-Control"
+        value: "public, max-age=31536000, immutable"
+    
+    # Redirects for SPA routing
+    routes:
+      - type: redirect
+        source: "/*"
+        destination: "/index.html"
